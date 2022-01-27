@@ -96,9 +96,9 @@ to '_i2cread_color' addr reg {
 }
 
 to 'get color' hue {
-  if (and (hue > 250) (hue < 360)) {return 'red'}
-  if (and (hue > 120) (hue < 180)) {return 'green'}
-  if (and (hue > 50) (hue < 110)) {return 'yellow'}
+  if (and (hue > 340) (hue < 360)) {return 'red'}
+  if (and (hue > 100) (hue < 160)) {return 'green'}
+  if (and (hue > 30) (hue < 90)) {return 'yellow'}
   return 'No color'
 }
 

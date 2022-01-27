@@ -6,8 +6,8 @@ variables _J1 _J2 _J3 _J4 _NEZHA_ADDR _APDS9960_ADDR test '_APDS9960 initalized'
 
 	spec ' ' '_APDS9960 setup' '_APDS9960 setup'
 	spec 'r' '_i2cread_color' '_i2cread_color _ _' 'auto auto' 0 0
-	spec ' ' 'set motors' 'set motor _ speed _' 'auto auto' 1 0
-	spec ' ' 'set servo' 'set servo _ angle _' 'auto auto' 1 90
+	spec ' ' 'set motors' 'set motor _ speed _' 'menu.range:1-4 auto' 1 0
+	spec ' ' 'set servo' 'set servo _ angle _' 'menu.range:1-4 auto' 1 90
 	spec 'r' 'APDS9960' 'APDS9960 hue'
 	spec 'r' '__rgbtohsl' '_rgbtohsl _ _ _' 'auto auto auto' 0 0 0
 	spec 'r' 'get color' 'get color _ name' 'auto' 0

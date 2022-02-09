@@ -4,7 +4,7 @@ version 1 0
 description ''
 variables _TrackBit_state_value '_Trackbit initialized' 
 
-	spec ' ' 'Get a Trackbit state value' 'Get a Trackbit state value'
+	spec ' ' 'Get a Trackbit state value' '_Get a Trackbit state value'
 	spec 'r' 'Trackbit channel' 'Trackbit channel _ is _' 'menu.range:1-4 menu.range:0-1' 1 0
 	spec 'r' 'Trackbit is' 'Trackbit is _ _ _ _' 'menu.range:0-1 menu.range:0-1 menu.range:0-1 menu.range:0-1' 0 0 0 0
 	spec ' ' '_Trackbit setup' '_Trackbit setup'
@@ -18,10 +18,12 @@ to 'Get a Trackbit state value' {  '_Trackbit setup'
 }
 
 to 'Trackbit channel' channel state {  '_Trackbit setup'
+  'Get a Trackbit state value'
   return (((_TrackBit_state_value >> (channel - 1)) & 1) == state)
 }
 
 to 'Trackbit is' channel1_state channel2_state channel3_state channel4_state {  '_Trackbit setup'
+  'Get a Trackbit state value'
   local 'tmp' _TrackBit_state_value
   return (and (and (((tmp >> 3) & 1) == channel4_state) (((tmp >> 2) & 1) == channel3_state)) (and (((tmp >> 1) & 1) == channel2_state) (((tmp >> 0) & 1) == channel1_state)))
 }
